@@ -1,0 +1,463 @@
+|traffic_light
+Timing[0] << IntervalTimer:IntervalTimer_inst.port1
+Timing[1] << IntervalTimer:IntervalTimer_inst.port1
+Timing[2] << IntervalTimer:IntervalTimer_inst.port1
+Timing[3] << IntervalTimer:IntervalTimer_inst.port1
+Timing[4] << IntervalTimer:IntervalTimer_inst.port1
+Timing[5] << IntervalTimer:IntervalTimer_inst.port1
+Timing[6] << IntervalTimer:IntervalTimer_inst.port1
+Timing[7] << IntervalTimer:IntervalTimer_inst.port1
+Timing[8] << IntervalTimer:IntervalTimer_inst.port1
+Timing[9] << IntervalTimer:IntervalTimer_inst.port1
+Timing[10] << IntervalTimer:IntervalTimer_inst.port1
+TL_o << IntervalTimer:IntervalTimer_inst.port3
+TS_o << IntervalTimer:IntervalTimer_inst.port2
+timeoff << IntervalTimer:IntervalTimer_inst.port0
+HG << HG.DB_MAX_OUTPUT_PORT_TYPE
+HY << HY.DB_MAX_OUTPUT_PORT_TYPE
+HR << HR.DB_MAX_OUTPUT_PORT_TYPE
+FG << FG.DB_MAX_OUTPUT_PORT_TYPE
+FY << FY.DB_MAX_OUTPUT_PORT_TYPE
+FR << FR.DB_MAX_OUTPUT_PORT_TYPE
+ST_o << ST_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => clk.IN1
+reset => reset.IN1
+c => always1.IN1
+c => always1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst
+timeoff_out <= TrafficLightCounter:TrafficLightCounter_inst.port0
+Timing[0] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[1] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[2] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[3] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[4] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[5] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[6] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[7] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[8] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[9] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+Timing[10] <= TrafficLightCounter:TrafficLightCounter_inst.port1
+TS <= TS.DB_MAX_OUTPUT_PORT_TYPE
+TL <= TL.DB_MAX_OUTPUT_PORT_TYPE
+clk => clk.IN1
+reset => state~3.DATAIN
+ST => ST.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TimeSrc:TimeSrc_inst
+o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[2] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[3] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[4] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[5] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[6] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[7] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[8] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[9] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[10] <= o.DB_MAX_OUTPUT_PORT_TYPE
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+sel => o.OUTPUTSELECT
+ts[0] => o.DATAA
+ts[1] => o.DATAA
+ts[2] => o.DATAA
+ts[3] => o.DATAA
+ts[4] => o.DATAA
+ts[5] => o.DATAA
+ts[6] => o.DATAA
+ts[7] => o.DATAA
+ts[8] => o.DATAA
+ts[9] => o.DATAA
+ts[10] => o.DATAA
+tl[0] => o.DATAB
+tl[1] => o.DATAB
+tl[2] => o.DATAB
+tl[3] => o.DATAB
+tl[4] => o.DATAB
+tl[5] => o.DATAB
+tl[6] => o.DATAB
+tl[7] => o.DATAB
+tl[8] => o.DATAB
+tl[9] => o.DATAB
+tl[10] => o.DATAB
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst
+Switch <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+OUT[0] <= D_ff:D_ff_inst[0].Qout
+OUT[1] <= D_ff:D_ff_inst[1].Qout
+OUT[2] <= D_ff:D_ff_inst[2].Qout
+OUT[3] <= D_ff:D_ff_inst[3].Qout
+OUT[4] <= D_ff:D_ff_inst[4].Qout
+OUT[5] <= D_ff:D_ff_inst[5].Qout
+OUT[6] <= D_ff:D_ff_inst[6].Qout
+OUT[7] <= D_ff:D_ff_inst[7].Qout
+OUT[8] <= D_ff:D_ff_inst[8].Qout
+OUT[9] <= D_ff:D_ff_inst[9].Qout
+OUT[10] <= D_ff:D_ff_inst[10].Qout
+clk => D_ff:D_ff_inst[0].clk
+clk => D_ff:D_ff_inst[1].clk
+clk => D_ff:D_ff_inst[2].clk
+clk => D_ff:D_ff_inst[3].clk
+clk => D_ff:D_ff_inst[4].clk
+clk => D_ff:D_ff_inst[5].clk
+clk => D_ff:D_ff_inst[6].clk
+clk => D_ff:D_ff_inst[7].clk
+clk => D_ff:D_ff_inst[8].clk
+clk => D_ff:D_ff_inst[9].clk
+clk => D_ff:D_ff_inst[10].clk
+load => mux2_1:mux_inst[0].sel
+load => mux2_1:mux_inst[1].sel
+load => mux2_1:mux_inst[2].sel
+load => mux2_1:mux_inst[3].sel
+load => mux2_1:mux_inst[4].sel
+load => mux2_1:mux_inst[5].sel
+load => mux2_1:mux_inst[6].sel
+load => mux2_1:mux_inst[7].sel
+load => mux2_1:mux_inst[8].sel
+load => mux2_1:mux_inst[9].sel
+load => mux2_1:mux_inst[10].sel
+En => HAS:HAS_inst[0].b
+D => HAS:HAS_inst[0].D
+D => HAS:HAS_inst[1].D
+D => HAS:HAS_inst[2].D
+D => HAS:HAS_inst[3].D
+D => HAS:HAS_inst[4].D
+D => HAS:HAS_inst[5].D
+D => HAS:HAS_inst[6].D
+D => HAS:HAS_inst[7].D
+D => HAS:HAS_inst[8].D
+D => HAS:HAS_inst[9].D
+D => HAS:HAS_inst[10].D
+value[0] => mux2_1:mux_inst[0].I1
+value[1] => mux2_1:mux_inst[1].I1
+value[2] => mux2_1:mux_inst[2].I1
+value[3] => mux2_1:mux_inst[3].I1
+value[4] => mux2_1:mux_inst[4].I1
+value[5] => mux2_1:mux_inst[5].I1
+value[6] => mux2_1:mux_inst[6].I1
+value[7] => mux2_1:mux_inst[7].I1
+value[8] => mux2_1:mux_inst[8].I1
+value[9] => mux2_1:mux_inst[9].I1
+value[10] => mux2_1:mux_inst[10].I1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[0]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[1]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[2]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[3]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[4]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[5]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[6]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[7]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[8]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[9]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|HAS:HAS_inst[10]
+out <= xor0.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= or0.DB_MAX_OUTPUT_PORT_TYPE
+D => and0.IN0
+D => and1.IN0
+a => and1.IN1
+a => xor0.IN0
+a => and0.IN1
+b => and0.IN2
+b => and1.IN2
+b => xor0.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[0]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[1]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[2]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[3]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[4]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[5]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[6]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[7]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[8]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[9]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|mux2_1:mux_inst[10]
+mux_out <= or0.DB_MAX_OUTPUT_PORT_TYPE
+sel => and1.IN0
+sel => and0.IN0
+I0 => and0.IN1
+I1 => and1.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[0]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[1]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[2]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[3]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[4]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[5]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[6]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[7]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[8]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[9]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+
+|traffic_light|IntervalTimer:IntervalTimer_inst|TrafficLightCounter:TrafficLightCounter_inst|D_ff:D_ff_inst[10]
+Qout <= Qout.DB_MAX_OUTPUT_PORT_TYPE
+clk => nand1.IN1
+clk => nand2.IN0
+Din => nand3.IN1
+
+

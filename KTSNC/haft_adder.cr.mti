@@ -1,0 +1,15 @@
+C:/Users/hungnguyen/Desktop/DoAn/KTSNC/haft_adder.v {1 {vlog -work work -stats=none {C:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module haft_adder
+
+Top level modules:
+	haft_adder
+
+} {} {}} C:/Users/hungnguyen/Desktop/DoAn/KTSNC/haft_adder_tb.v {1 {vlog -work work -stats=none {C:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module haft_adder_tb
+
+Top level modules:
+	haft_adder_tb
+
+} {} {}}

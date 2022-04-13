@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Timing[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Timing[10]",
+					"strict" : false
+				},
+				{
+					"name" : "TL_o",
+					"strict" : false
+				},
+				{
+					"name" : "TS_o",
+					"strict" : false
+				},
+				{
+					"name" : "timeoff",
+					"strict" : false
+				},
+				{
+					"name" : "HG",
+					"strict" : false
+				},
+				{
+					"name" : "HY",
+					"strict" : false
+				},
+				{
+					"name" : "HR",
+					"strict" : false
+				},
+				{
+					"name" : "FG",
+					"strict" : false
+				},
+				{
+					"name" : "FY",
+					"strict" : false
+				},
+				{
+					"name" : "FR",
+					"strict" : false
+				},
+				{
+					"name" : "ST_o",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "c",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

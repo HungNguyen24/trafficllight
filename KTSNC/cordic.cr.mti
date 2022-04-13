@@ -1,0 +1,93 @@
+C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/CountUp_32bit.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/CountUp_32bit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module CountUp_32bit
+
+Top level modules:
+	CountUp_32bit
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/HA.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/HA.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module HA
+
+Top level modules:
+	HA
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux2_1.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux2_1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux2_1
+
+Top level modules:
+	mux2_1
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Multiplier.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Multiplier.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Multiplier
+-- Compiling module and_row
+
+Top level modules:
+	Multiplier
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux21_32bit.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux21_32bit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux21_32bit
+
+Top level modules:
+	mux21_32bit
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Register_32bit.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Register_32bit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Register_32bit
+
+Top level modules:
+	Register_32bit
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Adder.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Adder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic_tb.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cordic_tb
+
+Top level modules:
+	cordic_tb
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cordic
+
+Top level modules:
+	cordic
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Barrel_shifter_32bit.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Barrel_shifter_32bit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Barrel_shifter_32bit
+
+Top level modules:
+	Barrel_shifter_32bit
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Datapath.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Datapath.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Datapath
+
+Top level modules:
+	Datapath
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/FA.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/FA.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FA
+
+Top level modules:
+	FA
+
+} {} {}} C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Control_Unit.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Control_Unit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Control_Unit
+
+Top level modules:
+	Control_Unit
+
+} {} {}}

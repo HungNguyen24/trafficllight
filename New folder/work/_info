@@ -1,0 +1,205 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+vCounterWithParallelLoad
+Z0 !s110 1627874174
+!i10b 1
+!s100 efF9AImMTD0YZTFYbjNO?1
+I0l=J0]0f;6B;j6YAz`bbS1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/hungnguyen/Desktop/DoAn/New folder
+w1627096944
+8C:/Users/hungnguyen/Desktop/CounterwithParallelLoad.v
+FC:/Users/hungnguyen/Desktop/CounterwithParallelLoad.v
+L0 8
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1627874174.000000
+!s107 C:/Users/hungnguyen/Desktop/CounterwithParallelLoad.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/CounterwithParallelLoad.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@counter@with@parallel@load
+vD_ff
+R0
+!i10b 1
+!s100 EANf:Bh3:lC1N`F5dbh`O2
+IN[94Rf3>h6NLgT>98U6G42
+R1
+R2
+w1627096973
+8C:/Users/hungnguyen/Desktop/D_ff.v
+FC:/Users/hungnguyen/Desktop/D_ff.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/D_ff.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/D_ff.v|
+!i113 1
+R5
+R6
+n@d_ff
+vHAS
+R0
+!i10b 1
+!s100 [QJ7GCZ4a=WEaO<La29fU2
+Iof9TSA9[HI<Hz7n02=`HK2
+R1
+R2
+w1627097017
+8C:/Users/hungnguyen/Desktop/HAS.v
+FC:/Users/hungnguyen/Desktop/HAS.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/HAS.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/HAS.v|
+!i113 1
+R5
+R6
+n@h@a@s
+vIntervalTimer
+Z7 !s110 1627874175
+!i10b 1
+!s100 DU:g9[R_z[e9<@<nKTl6Z2
+IWGgW6MnKABDGN^4lCYB@80
+R1
+R2
+w1627870195
+8C:/Users/hungnguyen/Desktop/IntervalTimer.v
+FC:/Users/hungnguyen/Desktop/IntervalTimer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/IntervalTimer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/IntervalTimer.v|
+!i113 1
+R5
+R6
+n@interval@timer
+vmux2_1
+R7
+!i10b 1
+!s100 7BP^:coPLMQe]=1:=^4g_1
+Ifczf_>TYc9PNiRnWi^YNE1
+R1
+R2
+w1627097217
+8C:/Users/hungnguyen/Desktop/mux2_1.v
+FC:/Users/hungnguyen/Desktop/mux2_1.v
+L0 5
+R3
+r1
+!s85 0
+31
+Z8 !s108 1627874175.000000
+!s107 C:/Users/hungnguyen/Desktop/mux2_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/mux2_1.v|
+!i113 1
+R5
+R6
+vTimeSrc
+R7
+!i10b 1
+!s100 Tg:zF5cgo]5ige?fPT6?D1
+IQ7gQ36[^3gBcClNj1iGAb0
+R1
+R2
+w1627097126
+8C:/Users/hungnguyen/Desktop/TimeSrc.v
+FC:/Users/hungnguyen/Desktop/TimeSrc.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/hungnguyen/Desktop/TimeSrc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/TimeSrc.v|
+!i113 1
+R5
+R6
+n@time@src
+vtraffic_light
+R7
+!i10b 1
+!s100 i2IHG<PKKdD0cR@FE3Ydd2
+I46b@iCm;WQWja>_TK^ZoH0
+R1
+R2
+w1627829953
+8C:/Users/hungnguyen/Desktop/traffic_light.v
+FC:/Users/hungnguyen/Desktop/traffic_light.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/hungnguyen/Desktop/traffic_light.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/traffic_light.v|
+!i113 1
+R5
+R6
+vtraffic_light_tb
+R7
+!i10b 1
+!s100 7e9ifaz>>F]>Z:1T@lCX22
+IG<B3`309<A8]>f9fz:OFX1
+R1
+R2
+w1627874171
+8C:\Users\hungnguyen\Desktop\traffic_light_tb.v
+FC:\Users\hungnguyen\Desktop\traffic_light_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:\Users\hungnguyen\Desktop\traffic_light_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\hungnguyen\Desktop\traffic_light_tb.v|
+!i113 1
+R5
+R6
+vTrafficLightCounter
+R0
+!i10b 1
+!s100 _FP3cQ]Mz6_ogUI7h`EV82
+Ig5[FEIS1XH_z:OiDJD;<[1
+R1
+R2
+w1627097185
+8C:/Users/hungnguyen/Desktop/TrafficLightCounter.v
+FC:/Users/hungnguyen/Desktop/TrafficLightCounter.v
+L0 8
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/TrafficLightCounter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/TrafficLightCounter.v|
+!i113 1
+R5
+R6
+n@traffic@light@counter

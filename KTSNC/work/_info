@@ -1,0 +1,355 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/hungnguyen/Desktop/DoAn/New folder
+vAdder
+Z0 !s110 1628042818
+!i10b 1
+!s100 Q9KKgzB?RTzg:mC9DM=<H0
+I`7bhzR13lNEJo1g<Em4@H3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/hungnguyen/Desktop/DoAn/KTSNC
+w1625898192
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Adder.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Adder.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1628042818.000000
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Adder.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@adder
+vand_row
+Z7 !s110 1628042819
+!i10b 1
+!s100 fefZM1ai4BG1>^5@KijTW0
+I4FHC`fjf5UkJXm[4WFGbQ0
+R1
+R2
+Z8 w1625882818
+Z9 8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Multiplier.v
+Z10 FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Multiplier.v
+L0 545
+R3
+r1
+!s85 0
+31
+Z11 !s108 1628042819.000000
+Z12 !s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Multiplier.v|
+Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Multiplier.v|
+!i113 1
+R5
+R6
+vBarrel_shifter_32bit
+R0
+!i10b 1
+!s100 I5m^<WomajBYkdnS<B@M:3
+IQ]MHfnL^6LDHNgGodI5Ai0
+R1
+R2
+w1625916075
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Barrel_shifter_32bit.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Barrel_shifter_32bit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Barrel_shifter_32bit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Barrel_shifter_32bit.v|
+!i113 1
+R5
+R6
+n@barrel_shifter_32bit
+vControl_Unit
+R0
+!i10b 1
+!s100 Y8;;GGgAkJiLBnggUbeC_2
+Id_lLQ9XW8o@F_?NX4Fa3m2
+R1
+R2
+w1625972191
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Control_Unit.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Control_Unit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Control_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Control_Unit.v|
+!i113 1
+R5
+R6
+n@control_@unit
+vcordic
+R0
+!i10b 1
+!s100 b_[NGoXOY>=cUOQo`3WJ23
+I6>TQ>JW4AOm<]96^g@iGa1
+R1
+R2
+w1626611242
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic.v|
+!i113 1
+R5
+R6
+vcordic_tb
+R0
+!i10b 1
+!s100 ;Rzl8IJTe7?[PhXbH:VjE0
+I3?G0_VlO`Z3>CXn6neFkM1
+R1
+R2
+w1626012624
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic_tb.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/cordic_tb.v|
+!i113 1
+R5
+R6
+vCountUp_32bit
+R0
+!i10b 1
+!s100 idJoF5cVnUfTJQ``ofC0o3
+IkKY01Le<8=k_NJjAzg[ce2
+R1
+R2
+w1625976992
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/CountUp_32bit.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/CountUp_32bit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/CountUp_32bit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/CountUp_32bit.v|
+!i113 1
+R5
+R6
+n@count@up_32bit
+vDatapath
+R0
+!i10b 1
+!s100 If[o56i`F1eBa9C=ZeQi93
+I>PX7[]<_2lCJ?<8mQlba92
+R1
+R2
+w1625980965
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Datapath.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Datapath.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Datapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Datapath.v|
+!i113 1
+R5
+R6
+n@datapath
+vFA
+R7
+!i10b 1
+!s100 z3_hl7cG?8Oj]]T=eiMoe0
+IW4T[64`QCMZH[^2@5ig2U2
+R1
+R2
+w1625882729
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/FA.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/FA.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/FA.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/FA.v|
+!i113 1
+R5
+R6
+n@f@a
+vHA
+R7
+!i10b 1
+!s100 kUD]ZoKXd;Pa]Maz0Fna40
+IMXF49TToWdZnHRBYgXa=K2
+R1
+R2
+w1625882705
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/HA.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/HA.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/HA.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/HA.v|
+!i113 1
+R5
+R6
+n@h@a
+vhaft_adder
+Z14 !s110 1633247379
+!i10b 1
+!s100 m9fUcOJQoF;;l0]L9EM852
+I?3hDfbk6zMBA=YEOPnG^=3
+R1
+R2
+w1633246081
+8C:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder.v
+FC:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z15 !s108 1633247379.000000
+!s107 C:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder.v|
+!i113 1
+R5
+R6
+vhaft_adder_tb
+R14
+!i10b 1
+!s100 j3`@RTCllknVM6GRhRg8T3
+I9l;oVHk0iKGEK2YG892kh3
+R1
+R2
+w1633247377
+8C:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder_tb.v
+FC:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+R15
+!s107 C:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\hungnguyen\Desktop\DoAn\KTSNC\haft_adder_tb.v|
+!i113 1
+R5
+R6
+vMultiplier
+R7
+!i10b 1
+!s100 eEEK=<?:?XkRQcfFW>Yei1
+I@QXY`Xld_MPcL4W9>Ok@G2
+R1
+R2
+R8
+R9
+R10
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 1
+R5
+R6
+n@multiplier
+vmux21_32bit
+R7
+!i10b 1
+!s100 Mg4;nCk`De=oAKkgn<TTM2
+IIK?jO@oIE9niXgSz8A[hT1
+R1
+R2
+w1625905948
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux21_32bit.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux21_32bit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux21_32bit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux21_32bit.v|
+!i113 1
+R5
+R6
+vmux2_1
+R7
+!i10b 1
+!s100 APdG^KHIEj<1<BOn3g;]50
+IghUjjF5XXHC=OHU1FTjOD3
+R1
+R2
+w1625890994
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux2_1.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux2_1.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux2_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/mux2_1.v|
+!i113 1
+R5
+R6
+vRegister_32bit
+R0
+!i10b 1
+!s100 2RPfEOHMlAV<KT^Y`lKCD1
+IXcK>6B@6<8X`h[`9Ihenc0
+R1
+R2
+w1625897116
+8C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Register_32bit.v
+FC:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Register_32bit.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1628042817.000000
+!s107 C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Register_32bit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/hungnguyen/Desktop/cordic_1/cordic_1/Register_32bit.v|
+!i113 1
+R5
+R6
+n@register_32bit

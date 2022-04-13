@@ -1,0 +1,2251 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition"
+
+// DATE "08/01/2021 15:17:21"
+
+// 
+// Device: Altera 5CGXFC7C7F23C8 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module traffic_light (
+	Timing,
+	TL_o,
+	TS_o,
+	timeoff,
+	HG,
+	HY,
+	HR,
+	FG,
+	FY,
+	FR,
+	ST_o,
+	clk,
+	reset,
+	c);
+output 	[10:0] Timing;
+output 	TL_o;
+output 	TS_o;
+output 	timeoff;
+output 	HG;
+output 	HY;
+output 	HR;
+output 	FG;
+output 	FY;
+output 	FR;
+output 	ST_o;
+input 	clk;
+input 	reset;
+input 	c;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \Timing[0]~output_o ;
+wire \Timing[1]~output_o ;
+wire \Timing[2]~output_o ;
+wire \Timing[3]~output_o ;
+wire \Timing[4]~output_o ;
+wire \Timing[5]~output_o ;
+wire \Timing[6]~output_o ;
+wire \Timing[7]~output_o ;
+wire \Timing[8]~output_o ;
+wire \Timing[9]~output_o ;
+wire \Timing[10]~output_o ;
+wire \TL_o~output_o ;
+wire \TS_o~output_o ;
+wire \timeoff~output_o ;
+wire \HG~output_o ;
+wire \HY~output_o ;
+wire \HR~output_o ;
+wire \FG~output_o ;
+wire \FY~output_o ;
+wire \FR~output_o ;
+wire \ST_o~output_o ;
+wire \clk~input_o ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2~combout ;
+wire \IntervalTimer_inst|TS~0_combout ;
+wire \c~input_o ;
+wire \Selector2~0_combout ;
+wire \reset~input_o ;
+wire \state.S2~q ;
+wire \Selector3~0_combout ;
+wire \state.S3~q ;
+wire \Selector0~0_combout ;
+wire \state.S0~q ;
+wire \Selector1~0_combout ;
+wire \state.S1~q ;
+wire \Selector4~2_combout ;
+wire \Selector4~4_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ;
+wire \IntervalTimer_inst|Selector0~0_combout ;
+wire \IntervalTimer_inst|state.S0~q ;
+wire \IntervalTimer_inst|Selector1~0_combout ;
+wire \IntervalTimer_inst|state.S1~q ;
+wire \IntervalTimer_inst|state.S2~q ;
+wire \IntervalTimer_inst|state.S3~q ;
+wire \IntervalTimer_inst|state.S4~q ;
+wire \IntervalTimer_inst|TL~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2~combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout ;
+wire \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ;
+wire \HR~2_combout ;
+wire \FR~0_combout ;
+wire \Selector4~3_combout ;
+wire \ST_o~reg0_q ;
+
+
+cyclonev_io_obuf \Timing[0]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[0]~output .bus_hold = "false";
+defparam \Timing[0]~output .open_drain_output = "false";
+defparam \Timing[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[1]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[1]~output .bus_hold = "false";
+defparam \Timing[1]~output .open_drain_output = "false";
+defparam \Timing[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[2]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[2]~output .bus_hold = "false";
+defparam \Timing[2]~output .open_drain_output = "false";
+defparam \Timing[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[3]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[3]~output .bus_hold = "false";
+defparam \Timing[3]~output .open_drain_output = "false";
+defparam \Timing[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[4]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[4]~output .bus_hold = "false";
+defparam \Timing[4]~output .open_drain_output = "false";
+defparam \Timing[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[5]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[5]~output .bus_hold = "false";
+defparam \Timing[5]~output .open_drain_output = "false";
+defparam \Timing[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[6]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[6]~output .bus_hold = "false";
+defparam \Timing[6]~output .open_drain_output = "false";
+defparam \Timing[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[7]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[7]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[7]~output .bus_hold = "false";
+defparam \Timing[7]~output .open_drain_output = "false";
+defparam \Timing[7]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[8]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[8]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[8]~output .bus_hold = "false";
+defparam \Timing[8]~output .open_drain_output = "false";
+defparam \Timing[8]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[9]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[9]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[9]~output .bus_hold = "false";
+defparam \Timing[9]~output .open_drain_output = "false";
+defparam \Timing[9]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \Timing[10]~output (
+	.i(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Timing[10]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Timing[10]~output .bus_hold = "false";
+defparam \Timing[10]~output .open_drain_output = "false";
+defparam \Timing[10]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \TL_o~output (
+	.i(!\IntervalTimer_inst|TL~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\TL_o~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \TL_o~output .bus_hold = "false";
+defparam \TL_o~output .open_drain_output = "false";
+defparam \TL_o~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \TS_o~output (
+	.i(!\IntervalTimer_inst|TS~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\TS_o~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \TS_o~output .bus_hold = "false";
+defparam \TS_o~output .open_drain_output = "false";
+defparam \TS_o~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \timeoff~output (
+	.i(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\timeoff~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \timeoff~output .bus_hold = "false";
+defparam \timeoff~output .open_drain_output = "false";
+defparam \timeoff~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \HG~output (
+	.i(!\state.S0~q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HG~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HG~output .bus_hold = "false";
+defparam \HG~output .open_drain_output = "false";
+defparam \HG~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \HY~output (
+	.i(\state.S1~q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HY~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HY~output .bus_hold = "false";
+defparam \HY~output .open_drain_output = "false";
+defparam \HY~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \HR~output (
+	.i(\HR~2_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HR~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HR~output .bus_hold = "false";
+defparam \HR~output .open_drain_output = "false";
+defparam \HR~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \FG~output (
+	.i(\state.S2~q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\FG~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \FG~output .bus_hold = "false";
+defparam \FG~output .open_drain_output = "false";
+defparam \FG~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \FY~output (
+	.i(\state.S3~q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\FY~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \FY~output .bus_hold = "false";
+defparam \FY~output .open_drain_output = "false";
+defparam \FY~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \FR~output (
+	.i(\FR~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\FR~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \FR~output .bus_hold = "false";
+defparam \FR~output .open_drain_output = "false";
+defparam \FR~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ST_o~output (
+	.i(\ST_o~reg0_q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ST_o~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ST_o~output .bus_hold = "false";
+defparam \ST_o~output .open_drain_output = "false";
+defparam \ST_o~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_ibuf \clk~input (
+	.i(clk),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\clk~input_o ));
+// synopsys translate_off
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2~combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TS~0 (
+// Equation(s):
+// \IntervalTimer_inst|TS~0_combout  = (\IntervalTimer_inst|state.S3~q ) # (\IntervalTimer_inst|state.S1~q )
+
+	.dataa(!\IntervalTimer_inst|state.S1~q ),
+	.datab(!\IntervalTimer_inst|state.S3~q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TS~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TS~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TS~0 .lut_mask = 64'h7777777777777777;
+defparam \IntervalTimer_inst|TS~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_io_ibuf \c~input (
+	.i(c),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\c~input_o ));
+// synopsys translate_off
+defparam \c~input .bus_hold = "false";
+defparam \c~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector2~0 (
+// Equation(s):
+// \Selector2~0_combout  = ( \c~input_o  & ( (!\IntervalTimer_inst|TL~0_combout  & (!\IntervalTimer_inst|TS~0_combout  & (\state.S1~q ))) # (\IntervalTimer_inst|TL~0_combout  & (((!\IntervalTimer_inst|TS~0_combout  & \state.S1~q )) # (\state.S2~q ))) ) ) # ( 
+// !\c~input_o  & ( (!\IntervalTimer_inst|TS~0_combout  & \state.S1~q ) ) )
+
+	.dataa(!\IntervalTimer_inst|TL~0_combout ),
+	.datab(!\IntervalTimer_inst|TS~0_combout ),
+	.datac(!\state.S1~q ),
+	.datad(!\state.S2~q ),
+	.datae(!\c~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector2~0 .extended_lut = "off";
+defparam \Selector2~0 .lut_mask = 64'h0C0C0C5D0C0C0C5D;
+defparam \Selector2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_io_ibuf \reset~input (
+	.i(reset),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\reset~input_o ));
+// synopsys translate_off
+defparam \reset~input .bus_hold = "false";
+defparam \reset~input .simulate_z_as = "z";
+// synopsys translate_on
+
+dffeas \state.S2 (
+	.clk(\clk~input_o ),
+	.d(\Selector2~0_combout ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.S2~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.S2 .is_wysiwyg = "true";
+defparam \state.S2 .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector3~0 (
+// Equation(s):
+// \Selector3~0_combout  = ( \c~input_o  & ( (!\IntervalTimer_inst|TL~0_combout  & (((\IntervalTimer_inst|TS~0_combout  & \state.S3~q )) # (\state.S2~q ))) # (\IntervalTimer_inst|TL~0_combout  & (\IntervalTimer_inst|TS~0_combout  & ((\state.S3~q )))) ) ) # ( 
+// !\c~input_o  & ( ((\IntervalTimer_inst|TS~0_combout  & \state.S3~q )) # (\state.S2~q ) ) )
+
+	.dataa(!\IntervalTimer_inst|TL~0_combout ),
+	.datab(!\IntervalTimer_inst|TS~0_combout ),
+	.datac(!\state.S2~q ),
+	.datad(!\state.S3~q ),
+	.datae(!\c~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector3~0 .extended_lut = "off";
+defparam \Selector3~0 .lut_mask = 64'h0F3F0A3B0F3F0A3B;
+defparam \Selector3~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \state.S3 (
+	.clk(\clk~input_o ),
+	.d(\Selector3~0_combout ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.S3~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.S3 .is_wysiwyg = "true";
+defparam \state.S3 .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector0~0 (
+// Equation(s):
+// \Selector0~0_combout  = ( \c~input_o  & ( (!\IntervalTimer_inst|TL~0_combout  & (((!\state.S3~q )) # (\IntervalTimer_inst|TS~0_combout ))) # (\IntervalTimer_inst|TL~0_combout  & (\state.S0~q  & ((!\state.S3~q ) # (\IntervalTimer_inst|TS~0_combout )))) ) ) 
+// # ( !\c~input_o  & ( (\state.S0~q  & ((!\state.S3~q ) # (\IntervalTimer_inst|TS~0_combout ))) ) )
+
+	.dataa(!\IntervalTimer_inst|TL~0_combout ),
+	.datab(!\IntervalTimer_inst|TS~0_combout ),
+	.datac(!\state.S0~q ),
+	.datad(!\state.S3~q ),
+	.datae(!\c~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector0~0 .extended_lut = "off";
+defparam \Selector0~0 .lut_mask = 64'h0F03AF230F03AF23;
+defparam \Selector0~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \state.S0 (
+	.clk(\clk~input_o ),
+	.d(\Selector0~0_combout ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.S0~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.S0 .is_wysiwyg = "true";
+defparam \state.S0 .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector1~0 (
+// Equation(s):
+// \Selector1~0_combout  = ( \c~input_o  & ( (!\IntervalTimer_inst|TL~0_combout  & ((!\state.S0~q ) # ((\IntervalTimer_inst|TS~0_combout  & \state.S1~q )))) # (\IntervalTimer_inst|TL~0_combout  & (\IntervalTimer_inst|TS~0_combout  & ((\state.S1~q )))) ) ) # 
+// ( !\c~input_o  & ( (\IntervalTimer_inst|TS~0_combout  & \state.S1~q ) ) )
+
+	.dataa(!\IntervalTimer_inst|TL~0_combout ),
+	.datab(!\IntervalTimer_inst|TS~0_combout ),
+	.datac(!\state.S0~q ),
+	.datad(!\state.S1~q ),
+	.datae(!\c~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector1~0 .extended_lut = "off";
+defparam \Selector1~0 .lut_mask = 64'h0033A0B30033A0B3;
+defparam \Selector1~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \state.S1 (
+	.clk(\clk~input_o ),
+	.d(\Selector1~0_combout ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.S1~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.S1 .is_wysiwyg = "true";
+defparam \state.S1 .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector4~2 (
+// Equation(s):
+// \Selector4~2_combout  = (!\IntervalTimer_inst|state.S1~q  & (!\IntervalTimer_inst|state.S3~q  & ((\state.S3~q ) # (\state.S1~q ))))
+
+	.dataa(!\IntervalTimer_inst|state.S1~q ),
+	.datab(!\IntervalTimer_inst|state.S3~q ),
+	.datac(!\state.S1~q ),
+	.datad(!\state.S3~q ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector4~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector4~2 .extended_lut = "off";
+defparam \Selector4~2 .lut_mask = 64'h0888088808880888;
+defparam \Selector4~2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector4~4 (
+// Equation(s):
+// \Selector4~4_combout  = ( \c~input_o  & ( (!\IntervalTimer_inst|state.S4~q  & (!\IntervalTimer_inst|state.S2~q  & ((!\state.S0~q ) # (\state.S2~q )))) ) ) # ( !\c~input_o  & ( \state.S2~q  ) )
+
+	.dataa(!\IntervalTimer_inst|state.S4~q ),
+	.datab(!\IntervalTimer_inst|state.S2~q ),
+	.datac(!\state.S0~q ),
+	.datad(!\state.S2~q ),
+	.datae(!\c~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector4~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector4~4 .extended_lut = "off";
+defparam \Selector4~4 .lut_mask = 64'h00FF808800FF8088;
+defparam \Selector4~4 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout  = ( \Selector4~4_combout  & ( !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2~combout  ) ) # ( !\Selector4~4_combout  & ( 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2~combout  & ((!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout  $ (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout )) # (\Selector4~2_combout 
+// ))) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand2~combout ),
+	.datad(!\Selector4~2_combout ),
+	.datae(!\Selector4~4_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0 .lut_mask = 64'h90F0F0F090F0F0F0;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand3~0_combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2~combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0~combout  = !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout  $ (((!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ) # 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0 .lut_mask = 64'h1E1E1E1E1E1E1E1E;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout  = ( \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0~combout  & ( (\IntervalTimer_inst|TL~0_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2~combout  & ((\Selector4~4_combout ) # (\Selector4~2_combout )))) ) ) # ( !\IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0~combout  & ( 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2~combout  & (((!\Selector4~2_combout  & !\Selector4~4_combout )) # (\IntervalTimer_inst|TL~0_combout ))) ) )
+
+	.dataa(!\IntervalTimer_inst|TL~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand2~combout ),
+	.datac(!\Selector4~2_combout ),
+	.datad(!\Selector4~4_combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[2]|xor0~combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0 .lut_mask = 64'hC4440444C4440444;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand3~0_combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2~combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0~combout  = !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout  $ (((!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ) # 
+// ((!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ) # (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ))))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0 .lut_mask = 64'h01FE01FE01FE01FE;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout  = ( \IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0~combout  & ( (\IntervalTimer_inst|TL~0_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2~combout  & ((\Selector4~4_combout ) # (\Selector4~2_combout )))) ) ) # ( !\IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0~combout  & ( 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2~combout  & (((!\Selector4~2_combout  & !\Selector4~4_combout )) # (\IntervalTimer_inst|TL~0_combout ))) ) )
+
+	.dataa(!\IntervalTimer_inst|TL~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand2~combout ),
+	.datac(!\Selector4~2_combout ),
+	.datad(!\Selector4~4_combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|HAS_inst[3]|xor0~combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0 .lut_mask = 64'hC4440444C4440444;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand3~0_combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1_combout  = (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout  & (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout  & 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout  & \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1 .lut_mask = 64'h0001000100010001;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0_combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout  = ( !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0_combout  & ( (!\Selector4~2_combout  & (!\Selector4~4_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout  $ (\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1_combout )))) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1_combout ),
+	.datac(!\Selector4~2_combout ),
+	.datad(!\Selector4~4_combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand2~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3 .lut_mask = 64'h9000000090000000;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand3~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0_combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout  = ( !\Selector4~4_combout  & ( !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0_combout  & ( (!\Selector4~2_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout  $ (((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout  & \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1_combout ))))) ) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~1_combout ),
+	.datad(!\Selector4~2_combout ),
+	.datae(!\Selector4~4_combout ),
+	.dataf(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand2~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3 .lut_mask = 64'hC900000000000000;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand3~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout  = ( \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout  & ( \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout  & ( 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout  & (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout  & (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout  & 
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout ))) ) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[1]|nand4~combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[2]|nand4~combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[3]|nand4~combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[4]|nand4~0_combout ),
+	.dataf(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[5]|nand4~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0 .lut_mask = 64'h0000000000000001;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0_combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout  = ( !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0_combout  & ( (!\Selector4~2_combout  & (!\Selector4~4_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout  $ (\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout )))) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ),
+	.datac(!\Selector4~2_combout ),
+	.datad(!\Selector4~4_combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand2~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3 .lut_mask = 64'h9000000090000000;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand3~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0_combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout  = ( !\Selector4~4_combout  & ( !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0_combout  & ( (!\Selector4~2_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout  $ (((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout  & \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ))))) ) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ),
+	.datad(!\Selector4~2_combout ),
+	.datae(!\Selector4~4_combout ),
+	.dataf(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand2~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3 .lut_mask = 64'hC900000000000000;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand3~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2_combout  = (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout  & (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout  & 
+// \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2 .lut_mask = 64'h0101010101010101;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0_combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout  = ( !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0_combout  & ( (!\Selector4~2_combout  & (!\Selector4~4_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout  $ (\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2_combout )))) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2_combout ),
+	.datac(!\Selector4~2_combout ),
+	.datad(!\Selector4~4_combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand2~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3 .lut_mask = 64'h9000000090000000;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand3~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0_combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout  = ( !\Selector4~4_combout  & ( !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0_combout  & ( (!\Selector4~2_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout  $ (((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout  & \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2_combout ))))) ) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~2_combout ),
+	.datad(!\Selector4~2_combout ),
+	.datae(!\Selector4~4_combout ),
+	.dataf(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand2~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3 .lut_mask = 64'hC900000000000000;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand3~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3_combout  = ( \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout  & ( (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout  & 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout  & (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout  & \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ))) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3 .lut_mask = 64'h0000000100000001;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0_combout  = (\clk~input_o  & (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout ))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0 .lut_mask = 64'h4040404040404040;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout  = ( !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0_combout  & ( (!\Selector4~2_combout  & (!\Selector4~4_combout  & 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout  $ (\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3_combout )))) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~3_combout ),
+	.datac(!\Selector4~2_combout ),
+	.datad(!\Selector4~4_combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand2~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3 .lut_mask = 64'h9000000090000000;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout )))
+
+	.dataa(!\clk~input_o ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0 .lut_mask = 64'h1515151515151515;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand1~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand3~combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0 .lut_mask = 64'h7050705070507050;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout  = ( \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout  & ( \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout  & ( 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout  & (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout  & (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout  & 
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ))) ) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[6]|nand4~0_combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[7]|nand4~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[8]|nand4~0_combout ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[9]|nand4~0_combout ),
+	.datae(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[10]|nand4~0_combout ),
+	.dataf(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0 .lut_mask = 64'h0000000000000001;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|WideOr0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|Selector0~0 (
+// Equation(s):
+// \IntervalTimer_inst|Selector0~0_combout  = ( \c~input_o  & ( (!\IntervalTimer_inst|state.S4~q ) # (!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ) ) ) # ( !\c~input_o  & ( (!\IntervalTimer_inst|state.S4~q  & 
+// (((\IntervalTimer_inst|state.S0~q ) # (\state.S0~q )))) # (\IntervalTimer_inst|state.S4~q  & (!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout  & ((\IntervalTimer_inst|state.S0~q ) # (\state.S0~q )))) ) )
+
+	.dataa(!\IntervalTimer_inst|state.S4~q ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ),
+	.datac(!\state.S0~q ),
+	.datad(!\IntervalTimer_inst|state.S0~q ),
+	.datae(!\c~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|Selector0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|Selector0~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|Selector0~0 .lut_mask = 64'h0EEEEEEE0EEEEEEE;
+defparam \IntervalTimer_inst|Selector0~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \IntervalTimer_inst|state.S0 (
+	.clk(\clk~input_o ),
+	.d(\IntervalTimer_inst|Selector0~0_combout ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\IntervalTimer_inst|state.S0~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \IntervalTimer_inst|state.S0 .is_wysiwyg = "true";
+defparam \IntervalTimer_inst|state.S0 .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|Selector1~0 (
+// Equation(s):
+// \IntervalTimer_inst|Selector1~0_combout  = ( \c~input_o  & ( (!\IntervalTimer_inst|state.S0~q ) # ((\IntervalTimer_inst|state.S1~q  & !\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout )) ) ) # ( !\c~input_o  & ( 
+// (!\IntervalTimer_inst|state.S1~q  & (((\state.S0~q  & !\IntervalTimer_inst|state.S0~q )))) # (\IntervalTimer_inst|state.S1~q  & ((!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ) # ((\state.S0~q  & !\IntervalTimer_inst|state.S0~q )))) ) )
+
+	.dataa(!\IntervalTimer_inst|state.S1~q ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ),
+	.datac(!\state.S0~q ),
+	.datad(!\IntervalTimer_inst|state.S0~q ),
+	.datae(!\c~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|Selector1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|Selector1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|Selector1~0 .lut_mask = 64'h4F44FF444F44FF44;
+defparam \IntervalTimer_inst|Selector1~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \IntervalTimer_inst|state.S1 (
+	.clk(\clk~input_o ),
+	.d(\IntervalTimer_inst|Selector1~0_combout ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\IntervalTimer_inst|state.S1~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \IntervalTimer_inst|state.S1 .is_wysiwyg = "true";
+defparam \IntervalTimer_inst|state.S1 .power_up = "low";
+// synopsys translate_on
+
+dffeas \IntervalTimer_inst|state.S2 (
+	.clk(\clk~input_o ),
+	.d(\IntervalTimer_inst|state.S1~q ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\IntervalTimer_inst|state.S2~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \IntervalTimer_inst|state.S2 .is_wysiwyg = "true";
+defparam \IntervalTimer_inst|state.S2 .power_up = "low";
+// synopsys translate_on
+
+dffeas \IntervalTimer_inst|state.S3 (
+	.clk(\clk~input_o ),
+	.d(\IntervalTimer_inst|state.S2~q ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\IntervalTimer_inst|state.S3~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \IntervalTimer_inst|state.S3 .is_wysiwyg = "true";
+defparam \IntervalTimer_inst|state.S3 .power_up = "low";
+// synopsys translate_on
+
+dffeas \IntervalTimer_inst|state.S4 (
+	.clk(\clk~input_o ),
+	.d(\IntervalTimer_inst|state.S3~q ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\IntervalTimer_inst|TrafficLightCounter_inst|WideOr0~combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\IntervalTimer_inst|state.S4~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \IntervalTimer_inst|state.S4 .is_wysiwyg = "true";
+defparam \IntervalTimer_inst|state.S4 .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TL~0 (
+// Equation(s):
+// \IntervalTimer_inst|TL~0_combout  = (\IntervalTimer_inst|state.S2~q ) # (\IntervalTimer_inst|state.S4~q )
+
+	.dataa(!\IntervalTimer_inst|state.S4~q ),
+	.datab(!\IntervalTimer_inst|state.S2~q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TL~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TL~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TL~0 .lut_mask = 64'h7777777777777777;
+defparam \IntervalTimer_inst|TL~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2~combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout  & (\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout ))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2 .lut_mask = 64'h2020202020202020;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout  = ( \Selector4~4_combout  & ( (\IntervalTimer_inst|TL~0_combout  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2~combout ) ) ) # ( !\Selector4~4_combout  & ( 
+// (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2~combout  & ((!\Selector4~2_combout  & (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout )) # (\Selector4~2_combout  & ((\IntervalTimer_inst|TL~0_combout ))))) ) )
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.datab(!\IntervalTimer_inst|TL~0_combout ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand2~combout ),
+	.datad(!\Selector4~2_combout ),
+	.datae(!\Selector4~4_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0 .lut_mask = 64'h5030303050303030;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout  = (\clk~input_o  & ((\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout ) # (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout ),
+	.datab(!\clk~input_o ),
+	.datac(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0 .lut_mask = 64'h1313131313131313;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4 (
+// Equation(s):
+// \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout  = (!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout  & (((\clk~input_o  & !\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout )) # 
+// (\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout )))
+
+	.dataa(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.datab(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand1~0_combout ),
+	.datac(!\clk~input_o ),
+	.datad(!\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand3~0_combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4 .extended_lut = "off";
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4 .lut_mask = 64'h4C444C444C444C44;
+defparam \IntervalTimer_inst|TrafficLightCounter_inst|D_ff_inst[0]|nand4 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \HR~2 (
+// Equation(s):
+// \HR~2_combout  = (\state.S3~q ) # (\state.S2~q )
+
+	.dataa(!\state.S2~q ),
+	.datab(!\state.S3~q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\HR~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \HR~2 .extended_lut = "off";
+defparam \HR~2 .lut_mask = 64'h7777777777777777;
+defparam \HR~2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \FR~0 (
+// Equation(s):
+// \FR~0_combout  = (!\state.S0~q ) # (\state.S1~q )
+
+	.dataa(!\state.S0~q ),
+	.datab(!\state.S1~q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FR~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FR~0 .extended_lut = "off";
+defparam \FR~0 .lut_mask = 64'hBBBBBBBBBBBBBBBB;
+defparam \FR~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector4~3 (
+// Equation(s):
+// \Selector4~3_combout  = ( \Selector4~2_combout  ) # ( !\Selector4~2_combout  & ( (!\c~input_o  & (((\state.S2~q )))) # (\c~input_o  & (!\IntervalTimer_inst|TL~0_combout  & ((!\state.S0~q ) # (\state.S2~q )))) ) )
+
+	.dataa(!\IntervalTimer_inst|TL~0_combout ),
+	.datab(!\state.S0~q ),
+	.datac(!\state.S2~q ),
+	.datad(!\c~input_o ),
+	.datae(!\Selector4~2_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector4~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector4~3 .extended_lut = "off";
+defparam \Selector4~3 .lut_mask = 64'h0F8AFFFF0F8AFFFF;
+defparam \Selector4~3 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \ST_o~reg0 (
+	.clk(\clk~input_o ),
+	.d(\Selector4~3_combout ),
+	.asdata(vcc),
+	.clrn(!\reset~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\ST_o~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \ST_o~reg0 .is_wysiwyg = "true";
+defparam \ST_o~reg0 .power_up = "low";
+// synopsys translate_on
+
+assign Timing[0] = \Timing[0]~output_o ;
+
+assign Timing[1] = \Timing[1]~output_o ;
+
+assign Timing[2] = \Timing[2]~output_o ;
+
+assign Timing[3] = \Timing[3]~output_o ;
+
+assign Timing[4] = \Timing[4]~output_o ;
+
+assign Timing[5] = \Timing[5]~output_o ;
+
+assign Timing[6] = \Timing[6]~output_o ;
+
+assign Timing[7] = \Timing[7]~output_o ;
+
+assign Timing[8] = \Timing[8]~output_o ;
+
+assign Timing[9] = \Timing[9]~output_o ;
+
+assign Timing[10] = \Timing[10]~output_o ;
+
+assign TL_o = \TL_o~output_o ;
+
+assign TS_o = \TS_o~output_o ;
+
+assign timeoff = \timeoff~output_o ;
+
+assign HG = \HG~output_o ;
+
+assign HY = \HY~output_o ;
+
+assign HR = \HR~output_o ;
+
+assign FG = \FG~output_o ;
+
+assign FY = \FY~output_o ;
+
+assign FR = \FR~output_o ;
+
+assign ST_o = \ST_o~output_o ;
+
+endmodule

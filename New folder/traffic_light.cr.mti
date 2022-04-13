@@ -1,0 +1,57 @@
+C:/Users/hungnguyen/Desktop/TimeSrc.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/TimeSrc.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module TimeSrc
+
+Top level modules:
+	TimeSrc
+
+} {} {}} C:/Users/hungnguyen/Desktop/D_ff.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/D_ff.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module D_ff
+
+Top level modules:
+	D_ff
+
+} {} {}} C:/Users/hungnguyen/Desktop/TrafficLightCounter.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/TrafficLightCounter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module TrafficLightCounter
+
+Top level modules:
+	TrafficLightCounter
+
+} {} {}} C:/Users/hungnguyen/Desktop/mux2_1.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/mux2_1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux2_1
+
+Top level modules:
+	mux2_1
+
+} {} {}} C:/Users/hungnguyen/Desktop/HAS.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/HAS.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module HAS
+
+Top level modules:
+	HAS
+
+} {} {}} C:/Users/hungnguyen/Desktop/CounterwithParallelLoad.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/CounterwithParallelLoad.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module CounterWithParallelLoad
+
+Top level modules:
+	CounterWithParallelLoad
+
+} {} {}} C:/Users/hungnguyen/Desktop/IntervalTimer.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/IntervalTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module IntervalTimer
+
+Top level modules:
+	IntervalTimer
+
+} {} {}} C:/Users/hungnguyen/Desktop/traffic_light.v {1 {vlog -work work -stats=none C:/Users/hungnguyen/Desktop/traffic_light.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module traffic_light
+
+Top level modules:
+	traffic_light
+
+} {} {}}

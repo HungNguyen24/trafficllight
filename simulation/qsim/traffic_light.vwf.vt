@@ -1,0 +1,95 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "08/01/2021 15:17:18"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          traffic_light
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module traffic_light_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg c;
+reg clk;
+reg reset;
+// wires                                               
+wire FG;
+wire FR;
+wire FY;
+wire HG;
+wire HR;
+wire HY;
+wire ST_o;
+wire TL_o;
+wire TS_o;
+wire [10:0] Timing;
+wire timeoff;
+
+// assign statements (if any)                          
+traffic_light i1 (
+// port map - connection between master ports and signals/registers   
+	.FG(FG),
+	.FR(FR),
+	.FY(FY),
+	.HG(HG),
+	.HR(HR),
+	.HY(HY),
+	.ST_o(ST_o),
+	.TL_o(TL_o),
+	.TS_o(TS_o),
+	.Timing(Timing),
+	.c(c),
+	.clk(clk),
+	.reset(reset),
+	.timeoff(timeoff)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b1;
+	reset = #20000 1'b0;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #10000 1'b1;
+	#10000;
+end 
+
+// c
+initial
+begin
+	c = 1'b0;
+	c = #20000 1'b1;
+	c = #690000 1'b0;
+	c = #260000 1'b1;
+end 
+endmodule
+
